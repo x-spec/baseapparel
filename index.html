@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/icons/favicon-32x32.png" type="image/png">
+    <link rel="stylesheet" href="styles/css/index.css">
+    <title>Base Apparel | Coming Soon</title>
+</head>
+
+<body>
+    <header>
+        <a href="#">
+            <img src="assets/images/logo.svg" alt="Base Apparel - Home">
+        </a>
+    </header>
+    <main>
+        <section class="hero">
+            <picture>
+                <source media="(min-width:1024px)" srcset="assets/images/hero-desktop.jpg">
+                <img src="assets/images/hero-mobile.jpg" alt="Model in fashion attire">
+            </picture>
+            <div class="hero__content">
+                <h1 class="hero__title">
+                    We're
+                    <br>
+                    <span class="text--bold">
+                        Coming soon
+                    </span>
+                </h1>
+                <p class="hero__desc">
+                    Hello fellow shoppers!
+                    We're currently building our new fashion store.
+                    Add your email below to stay up-to-date with announcements and our launch deals.
+                </p>
+                <form class="hero__form" aria-live="polite" novalidate>
+                    <div class="form__group">
+                        <input type="email" name="email" placeholder="Email Address" aria-label="Enter email address">
+                        <span class="form__error"></span>
+                    </div>
+                    <button type="submit" aria-label="Press Enter or click to submit">
+                        <span>Thank you for subscribing</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="index.js"></script>
+</body>
+
+</html>
