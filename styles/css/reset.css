@@ -1,0 +1,19 @@
+html, body, h1, p {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+button, input {
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+button {
+  cursor: pointer;
+}
+/*# sourceMappingURL=reset.css.map */

@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+html, body, h1, p {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+button, input {
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.text--bold {
+  font-weight: bold;
+}
+
+header {
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 2rem;
+}
+
+header img {
+  height: 1.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+  header {
+    padding: 2rem 10rem;
+    position: absolute;
+  }
+  header img {
+    height: initial;
+  }
+}
+
+.hero {
+  text-align: center;
+  color: #ce9797;
+  background: linear-gradient(135deg, white, #fff5f5);
+}
+
+.hero picture {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.hero picture::before, .hero picture::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+}
+
+.hero picture::before {
+  background: rgba(255, 255, 255, 0.5);
+  height: 0;
+  -webkit-animation: scaleUp 1s 0.5s 1 forwards;
+          animation: scaleUp 1s 0.5s 1 forwards;
+  z-index: 1;
+}
+
+.hero picture::after {
+  background: rgba(249, 98, 98, 0.8);
+  height: 50%;
+  -webkit-animation: scaleUp 1.5s 1 forwards;
+          animation: scaleUp 1.5s 1 forwards;
+}
+
+.hero picture img {
+  width: 100%;
+  -webkit-animation: fadeIn 2s 1 forwards;
+          animation: fadeIn 2s 1 forwards;
+}
+
+.hero__content {
+  padding: 3rem 1.5rem;
+}
+
+.hero__title {
+  font-weight: lighter;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  letter-spacing: 0.5rem;
+  -webkit-animation: lineHeight 1s 1 forwards;
+          animation: lineHeight 1s 1 forwards;
+}
+
+.hero__title span {
+  color: #413a3a;
+}
+
+.hero__desc {
+  font-size: 0.9rem;
+  margin: 1.5rem 0;
+  line-height: 1.5;
+}
+
+.hero__form {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero__form .form__group, .hero__form input {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.hero__form .form__group {
+  position: relative;
+}
+
+.hero__form .form__group input {
+  border: 1px solid rgba(206, 151, 151, 0.5);
+  padding: 1rem 90px 1rem 1.5rem;
+  border-radius: 50px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.hero__form .form__group input::-webkit-input-placeholder {
+  color: rgba(206, 151, 151, 0.5);
+}
+
+.hero__form .form__group input:-ms-input-placeholder {
+  color: rgba(206, 151, 151, 0.5);
+}
+
+.hero__form .form__group input::-ms-input-placeholder {
+  color: rgba(206, 151, 151, 0.5);
+}
+
+.hero__form .form__group input::placeholder {
+  color: rgba(206, 151, 151, 0.5);
+}
+
+.hero__form .form__group input:focus {
+  outline: none;
+}
+
+.hero__form .form__group .form__error {
+  display: none;
+  font-weight: bold;
+  color: #f96262;
+  font-size: 0.9rem;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 1.5rem;
+}
+
+.hero__form .form__group.invalid::after {
+  content: '';
+  height: 1.5rem;
+  width: 1.5rem;
+  background: url("../../assets/icons/icon-error.svg");
+  background-size: contain;
+  position: absolute;
+  right: 90px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.hero__form .form__group.invalid input {
+  position: relative;
+  border: 2px solid #f96262;
+}
+
+.hero__form .form__group.invalid .form__error {
+  display: block;
+}
+
+.hero__form .form__group.valid {
+  pointer-events: none;
+}
+
+.hero__form .form__group.valid + button {
+  width: 100%;
+  pointer-events: none;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+}
+
+.hero__form .form__group.valid + button::after {
+  -webkit-animation: fadeOutRight 0.5s 1 forwards;
+          animation: fadeOutRight 0.5s 1 forwards;
+}
+
+.hero__form .form__group.valid + button span {
+  display: block;
+  opacity: 0;
+  -webkit-animation: fadeIn 0.5s 0.5s 1 forwards;
+          animation: fadeIn 0.5s 0.5s 1 forwards;
+}
+
+.hero__form button {
+  position: absolute;
+  right: 0;
+  display: block;
+  width: 80px;
+  height: 100%;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  -webkit-transition: background 0.3s, -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+  transition: background 0.3s, -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s, -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+  overflow-x: hidden;
+}
+
+.hero__form button:hover {
+  background: linear-gradient(135deg, #fff5f5, #f8bfbf);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 5px 10px #ce9797;
+          box-shadow: 0 5px 10px #ce9797;
+}
+
+.hero__form button::after {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: url("../../assets/icons/icon-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero__form button span {
+  color: white;
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .hero {
+    background: url("../../assets/images/bg-pattern-desktop.svg"), linear-gradient(135deg, white, #fff5f5);
+    background-repeat: no-repeat;
+    background-size: 60% auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 100vh;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .hero picture {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    height: 100vh;
+    width: 45%;
+    margin-left: auto;
+  }
+  .hero picture img {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .hero__content {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    padding: 0 2rem 0 10rem;
+    text-align: left;
+  }
+  .hero__title, .hero__desc {
+    max-width: 400px;
+  }
+  .hero__title {
+    font-size: 4rem;
+  }
+  .hero__desc {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .hero__title, .hero__desc {
+    max-width: 450px;
+  }
+}
+
+@-webkit-keyframes lineHeight {
+  from {
+    opacity: 0;
+    line-height: 0;
+  }
+  to {
+    opacity: 1;
+    line-height: 1.1;
+  }
+}
+
+@keyframes lineHeight {
+  from {
+    opacity: 0;
+    line-height: 0;
+  }
+  to {
+    opacity: 1;
+    line-height: 1.1;
+  }
+}
+
+@-webkit-keyframes scaleUp {
+  50% {
+    height: 100%;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    height: 0;
+    top: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+
+@keyframes scaleUp {
+  50% {
+    height: 100%;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    height: 0;
+    top: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+
+@-webkit-keyframes fadeOutRight {
+  from {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+  }
+}
+
+@keyframes fadeOutRight {
+  from {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=index.css.map */
